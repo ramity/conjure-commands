@@ -1,5 +1,5 @@
 {
-    "name": "oos/conjure",
+    "name": "ramity/symfony-conjure",
     "description": "Symfony commands for conjure project",
     "type": "symfony-bundle",
     "license": "MIT",
