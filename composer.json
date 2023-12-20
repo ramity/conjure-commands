@@ -1,0 +1,16 @@
+{
+    "name": "oos/conjure",
+    "description": "Symfony commands for conjure project",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "require": {
+        "php": ">7",
+        "symfony/console": ">5.0",
+        "symfony/dom-crawler": ">5.0" 
+    },
+    "autoload": {
+        "psr-4": {
+            "OOS\\Conjure\\": "src/"
+        }
+    }
+}
