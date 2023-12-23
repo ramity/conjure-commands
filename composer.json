@@ -1,5 +1,5 @@
 {
-    "name": "oos/symfony-conjure",
+    "name": "ramity/symfony-conjure",
     "description": "Symfony commands for conjure project",
     "type": "symfony-bundle",
     "license": "MIT",
@@ -12,8 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OOS\\Conjure\\": "src"
-        },
-        "classmap": ["src"]
+            "Ramity\\Conjure\\": "src"
+        }
     }
 }

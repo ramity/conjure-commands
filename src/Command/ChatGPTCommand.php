@@ -1,6 +1,6 @@
 <?php
 
-namespace OOS\Conjure\Command;
+namespace Ramity\Conjure\Command;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -9,12 +9,11 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DomCrawler\Crawler;
 
-#[AsCommand(
-    name: 'conjure:chatgpt',
-    description: 'Allows for the injection of code provided by chatGPT',
-)]
+#[AsCommand( name: 'conjure:chatgpt', description: 'Allows for the injection of code provided by chatGPT' )]
 class ChatGPTCommand extends Command
 {
+    protected static #
+
     public function __construct()
     {
         parent::__construct();
