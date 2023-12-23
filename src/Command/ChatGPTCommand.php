@@ -22,7 +22,6 @@ class ChatGPTCommand extends Command
         $this
             ->setDescription('Extract text from a shared ChatGPT conversation')
             ->addArgument('conversationURL', InputArgument::REQUIRED, 'The shared chatGPT conversation URL.')
-            ->addArgument('conversationRegex', InputArgument::REQUIRED, 'The regex pattern to apply on the conversation.')
             ->addArgument('filePath', InputArgument::REQUIRED, 'The file destination for the regex extracted text.')
             ->addArgument('fileLine', InputArgument::OPTIONAL, 'The line number of where the regex extracted text will start.')
             ->addArgument('mode', InputArgument::OPTIONAL, 'The mode for modification (insert, replace).')
@@ -58,22 +57,20 @@ class ChatGPTCommand extends Command
         $firstMappingDictionary = $mappings->$firstMappingKey;
         $assistantResponseText = $firstMappingDictionary->message->content->parts[0];
 
-        echo $assistantResponseText;
-
         // Apply regex to the assistant response text
-        //$pattern = $input->getArgument('conversationRegex');
-        //$result = preg_match($pattern, $assistantResponseText, $matches);
+        $pattern = '/```.*?\n(.*?)```/s';
+        $result = preg_match($pattern, $assistantResponseText, $matches);
 
         // Validate
-        // if ($result == 0)
-        // {
-        //     $output->writeln('Error: ' . $pattern . ' get not obtain any matches.');
-        //     return Command::FAILURE;
-        // }
+        if ($result == 0)
+        {
+            $output->writeln('Error: ' . $pattern . ' get not obtain any matches.');
+            return Command::FAILURE;
+        }
 
-        // $assistantResponseTextSelection = $matches[1];
+        $assistantResponseTextSelection = $matches[1];
 
-        // echo $assistantResponseTextSelection;
+        echo $assistantResponseTextSelection;
 
         return Command::SUCCESS;
     }
