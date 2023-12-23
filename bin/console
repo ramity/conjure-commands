@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use OOS\Conjure\Commands\ChatGPTCommand;
+
+$app = new Application();
+$app->add(new ChatGPTCommand());
+$app->run();

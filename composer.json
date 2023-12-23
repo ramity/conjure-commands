@@ -13,11 +13,7 @@
     "autoload": {
         "psr-4": {
             "OOS\\Conjure\\": "src"
-        }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "OOS\\Conjure\\ConjureServiceProvider::registerCommands"
-        ]
+        },
+        "classmap": ["src"]
     }
 }
