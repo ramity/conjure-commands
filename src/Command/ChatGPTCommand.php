@@ -58,20 +58,22 @@ class ChatGPTCommand extends Command
         $firstMappingDictionary = $mappings->$firstMappingKey;
         $assistantResponseText = $firstMappingDictionary->message->content->parts[0];
 
+        echo $assistantResponseText;
+
         // Apply regex to the assistant response text
-        $pattern = $input->getArgument('conversationRegex');
-        $result = preg_match($pattern, $assistantResponseText, $matches);
+        //$pattern = $input->getArgument('conversationRegex');
+        //$result = preg_match($pattern, $assistantResponseText, $matches);
 
         // Validate
-        if ($result == 0)
-        {
-            $output->writeln('Error: ' . $pattern . ' get not obtain any matches.');
-            return Command::FAILURE;
-        }
+        // if ($result == 0)
+        // {
+        //     $output->writeln('Error: ' . $pattern . ' get not obtain any matches.');
+        //     return Command::FAILURE;
+        // }
 
-        $assistantResponseTextSelection = $matches[1];
+        // $assistantResponseTextSelection = $matches[1];
 
-        echo $assistantResponseTextSelection;
+        // echo $assistantResponseTextSelection;
 
         return Command::SUCCESS;
     }
