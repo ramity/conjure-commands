@@ -14,5 +14,10 @@
         "psr-4": {
             "Ramity\\Bundle\\ConjureBundle\\": "src"
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Ramity\\Bundle\\ConjureBundle\\PostInstallHandler::addBundle"
+        ]
     }
 }
