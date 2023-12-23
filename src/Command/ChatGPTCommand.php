@@ -12,8 +12,6 @@ use Symfony\Component\DomCrawler\Crawler;
 #[AsCommand( name: 'conjure:chatgpt', description: 'Allows for the injection of code provided by chatGPT' )]
 class ChatGPTCommand extends Command
 {
-    protected static #
-
     public function __construct()
     {
         parent::__construct();
