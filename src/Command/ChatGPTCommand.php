@@ -22,7 +22,7 @@ class ChatGPTCommand extends Command
         $this
             ->setDescription('Extract text from a shared ChatGPT conversation')
             ->addArgument('conversationURL', InputArgument::REQUIRED, 'The shared chatGPT conversation URL.')
-            ->addArgument('filePath', InputArgument::REQUIRED, 'The file destination for the regex extracted text.')
+            ->addArgument('filePath', InputArgument::OPTIONAL, 'The file destination for the regex extracted text.')
             ->addArgument('fileLine', InputArgument::OPTIONAL, 'The line number of where the regex extracted text will start.')
             ->addArgument('mode', InputArgument::OPTIONAL, 'The mode for modification (insert, replace).')
         ;
