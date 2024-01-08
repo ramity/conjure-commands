@@ -11,5 +11,6 @@ class ConjureBundle extends Bundle
     {
         // Register your command(s) here
         $application->add(new Command\ChatGPTCommand());
+        $application->add(new Command\WrapperCommand());
     }
 }
